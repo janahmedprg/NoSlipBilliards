@@ -209,7 +209,7 @@ def wall_collide(pos,vel,wall):
         #print(vecang((vel[1],vel[2]),v1)+vecang((vel[1],vel[2]),v2))
         angle_difference=vecang((vel[0],vel[1]),v1)+vecang((vel[0],vel[1]),v2)-vecang(v1,v2) #note cannot use vel directly as it is 3D
         #print(angle_difference)
-        if angle_difference>0.000001:
+        if angle_difference>0.0001:
             #print('does not collide')
             return (0,0,large+1)
         
@@ -490,7 +490,7 @@ def billiard(request):
     elif isWedge:
         table = make_triangle(curve, 1000)
     elif curve != 0:
-        table=make_crvngon(sides,math.radians(curve))
+        table=make_crvngon(sides,curve)
     else:
         table = make_ngon(sides)
 
